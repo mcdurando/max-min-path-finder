@@ -1,0 +1,51 @@
+ .parent{
+    -fx-background-color: #fff ;
+}
+
+.sidebar{
+    -fx-background-color: #333645;
+}
+.bluebar{
+    -fx-background-color: #1e90ff;
+}
+
+.graybar{
+    -fx-background-color: #ddd2d2;
+}
+
+.ft{
+    font-size : 100%;
+}
+.round-lbl{
+    -fx-background-color : #FE7A79;
+    -fx-background-radius : 100%;
+}
+
+.card-01{
+    -fx-background-color: rgba(0.00 , 162 , 211 , 0.3);
+}
+
+.round-button{
+    -fx-background-color : #FE7A79;
+    -fx-background-radius : 10%;
+}
+
+.left_pane{
+    -fx-background-image: url("../images/image.jpg");
+}
+
+.center_pane{
+    -fx-background-image: url("../images/image2.jpg");
+}
+.editor_graph{
+    -fx-background-image: url("../images/image4.jpg");
+     -fx-background-radius : 10px;;
+}
+
+.algorithm{
+    -fx-background-image: url("../images/image5.jpg");
+}
+
+.contentScroll{
+    -fx-background-image: url("../images/image6.jpg");
+}

@@ -1,0 +1,11 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.center_pane{
+    -fx-background-image: url("../images/image2.jpg");
+}

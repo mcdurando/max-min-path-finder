@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="center_pane" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxsimulator.controllers.HomeController">
+   <children>
+      <ImageView fitHeight="143.0" fitWidth="135.0" layoutX="240.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icone.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnClose" layoutX="562.0" layoutY="1.0" onAction="#closeHandle" prefHeight="26.0" prefWidth="21.0" style="-fx-background-color: transparent;" text=" ">
+         <graphic>
+            <FontAwesomeIconView glyphName="CLOSE" size="18" />
+         </graphic>
+      </JFXButton>
+      <Label layoutX="101.0" layoutY="267.0" prefHeight="42.0" prefWidth="426.0" text="OPTIMAL &amp; MAXIMAL PATH FINDER" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="160.0" layoutY="301.0" prefHeight="35.0" prefWidth="295.0" text="Created by Mac Carthy &amp; Ogino">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.49523809523809526" endY="0.9095238095238095" startX="0.6333333333333334" startY="0.5714285714285714">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label alignment="CENTER" layoutX="233.0" layoutY="362.0" prefHeight="26.0" prefWidth="135.0" text="Copyright 2019">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.29523809523809524" endY="0.9095238095238095" startX="0.6333333333333334" startY="0.5714285714285714">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label alignment="CENTER" layoutX="185.0" layoutY="336.0" prefHeight="26.0" prefWidth="230.0" text="--------------------">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="21.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.38571428571428573" endY="0.9095238095238095" startX="0.6333333333333334" startY="0.5714285714285714">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXButton fx:id="btnStart" layoutX="227.0" layoutY="219.0" onAction="#startAppHandle" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #21759b;" text="START" textFill="#f5f5f5">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <TextFlow fx:id="textFlow" layoutX="14.0" layoutY="27.0" prefHeight="35.0" prefWidth="577.0" />
+   </children>
+</AnchorPane>

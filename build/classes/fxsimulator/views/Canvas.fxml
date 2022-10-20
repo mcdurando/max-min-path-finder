@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" stylesheets="@../css/myStylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxsimulator.controllers.CanvasController">
+   <children>
+      <StackPane fx:id="stackRoot" prefHeight="620.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="anchorRoot" layoutX="1.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="border" layoutX="199.0" prefHeight="580.0" prefWidth="702.0" styleClass="center_pane" stylesheets="@../css/myStylesheet.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="btnClose" layoutX="968.0" layoutY="2.0" onAction="#closeHandle" prefHeight="25.0" prefWidth="17.0" style="-fx-background-color: transparent;" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CLOSE" size="18" />
+                     </graphic>
+                  </JFXButton>
+                  <Label fx:id="resultLabel" alignment="CENTER" layoutX="100.0" layoutY="14.0" prefHeight="31.0" prefWidth="794.0" text="GRAPH EDITOR" textFill="#f5f5f5">
+                     <font>
+                        <Font name="Times New Roman Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="2.0" layoutY="382.0" prefHeight="319.0" prefWidth="1001.0">
+                     <children>
+                        <Pane fx:id="dataGraphPane" prefHeight="200.0" prefWidth="200.0" styleClass="algorithm" stylesheets="@../css/myStylesheet.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <JFXButton fx:id="imediatelyButton" layoutX="261.0" layoutY="220.0" onAction="#checkIfPathIsOK" prefHeight="51.0" prefWidth="190.0" style="-fx-background-color: #21759b;" text="IMMEDIATELY" textFill="#f8eeee">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="stepToStepButton" layoutX="560.0" layoutY="220.0" onAction="#checkIfPathIsOK" prefHeight="51.0" prefWidth="190.0" style="-fx-background-color: #21759b;" text="STEP BY STEP" textFill="#f8eeee">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXComboBox fx:id="minOrmax" layoutX="368.0" layoutY="88.0" prefHeight="44.0" prefWidth="287.0" style="-fx-background-color: #aac466;" />
+                              <Label alignment="CENTER" layoutX="346.0" layoutY="42.0" prefHeight="31.0" prefWidth="331.0" text="Please choose the type of the algorithm :" textFill="#c6b9b9">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="414.0" layoutY="160.0" prefHeight="33.0" prefWidth="201.0" text="The way of run :" textFill="#c9b3b3">
+                                 <font>
+                                    <Font name="Times New Roman Special G1" size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="algorithmPane" prefHeight="200.0" prefWidth="1001.0" styleClass="algorithm" stylesheets="@../css/myStylesheet.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane fx:id="myScrollPane" layoutX="227.0" layoutY="45.0" prefHeight="250.0" prefWidth="560.0" style="-fx-background-color: #21759b;">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="247.0" prefWidth="556.0" style="-fx-background-color: #f3f5f0;" />
+                                </content>
+                              </ScrollPane>
+                              <Label fx:id="matrixName" alignment="CENTER" layoutX="259.0" layoutY="14.0" prefHeight="28.0" prefWidth="484.0" text="Matrix D1" textFill="#e4dcdc">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="valueOfK" layoutX="135.0" layoutY="53.0" prefHeight="17.0" prefWidth="67.0" text="k = 1" textFill="#f5eded">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="nextStepButton" layoutX="836.0" layoutY="148.0" onAction="#manageNextMatrixHandle" prefHeight="44.0" prefWidth="119.0" style="-fx-background-color: #3b5998;" text="Next" textFill="#f5f2f2">
+                                 <font>
+                                    <Font name="Times New Roman" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#fcfafa" glyphName="ARROW_RIGHT" size="14" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="prevStepButton" disable="true" layoutX="49.0" layoutY="147.0" onAction="#managePreviousMatrixHandle" prefHeight="44.0" prefWidth="119.0" style="-fx-background-color: #3b5998;" text="Previous" textFill="#f5f2f2">
+                                 <font>
+                                    <Font name="Times New Roman" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#f8efef" glyphName="ARROW_LEFT" size="14" />
+                                 </graphic>
+                              </JFXButton>
+                           </children></Pane>
+                        <Pane fx:id="resultPane" prefHeight="319.0" prefWidth="1001.0" styleClass="algorithm">
+                           <children>
+                              <TitledPane fx:id="informationDetails" alignment="CENTER" animated="false" contentDisplay="CENTER" layoutX="46.0" layoutY="89.0" prefHeight="200.0" prefWidth="916.0" styleClass="info">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="pathCost" alignment="CENTER" prefHeight="51.0" prefWidth="916.0" textFill="#bf8080">
+                                             <font>
+                                                <Font name="Times New Roman Bold" size="30.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="pathCount" alignment="CENTER" layoutY="61.0" prefHeight="60.0" prefWidth="916.0" textFill="#bf8080">
+                                             <font>
+                                                <Font name="Times New Roman Bold" size="30.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="25.0" />
+                                 </font>
+                              </TitledPane>
+                              <Label alignment="CENTER" layoutX="301.0" layoutY="27.0" prefHeight="33.0" prefWidth="386.0" text="INFORMATIONS DETAILS" textFill="#ffb5b5">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <stylesheets>
+                              <URL value="@../css/myStylesheet.css" />
+                              <URL value="@../css/bootstrap3.css" />
+                           </stylesheets>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <Label alignment="CENTER" layoutX="17.0" layoutY="161.0" prefHeight="61.0" prefWidth="67.0" text="START">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="15.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#c68d8d" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="906.0" layoutY="161.0" prefHeight="60.0" prefWidth="91.0" text="END">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="15.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#eeb8b8" />
+                              <Stop color="#f3f5f0" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </Pane>
+            <Group fx:id="canvasGroup" layoutX="200.0" layoutY="-3.0" onMouseClicked="#handle" onMouseDragged="#handle" onMousePressed="#handle" onMouseReleased="#handle" styleClass="editor_graph" stylesheets="@../css/myStylesheet.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Pane fx:id="viewer" onMouseClicked="#handle" onMouseDragged="#handle" onMousePressed="#handle" onMouseReleased="#handle" prefHeight="296.0" prefWidth="794.0" style="-fx-background-color: #f3f5f0;">
+                     <cursor>
+                        <Cursor fx:constant="CROSSHAIR" />
+                     </cursor>
+                  </Pane>
+               </children>
+            </Group>
+            <ImageView fx:id="openHidden" fitHeight="44.0" fitWidth="44.0" layoutX="856.0" layoutY="289.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="287.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="289.0">
+               <image>
+                  <Image url="@../res/openHidden.png" />
+               </image>
+            </ImageView>
+            <AnchorPane prefHeight="580.0" prefWidth="200.0" styleClass="left_pane" stylesheets="@../css/myStylesheet.css" AnchorPane.bottomAnchor="-4.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="519.0" prefHeight="61.0" prefWidth="181.0" spacing="10.0" AnchorPane.bottomAnchor="0.0">
+                     <children>
+                        <JFXButton fx:id="editButton" buttonType="RAISED" onAction="#editGraphHandle" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: #21759b;" text="EDIT" textFill="#d3c5c5">
+                           <font>
+                              <Font name="Junction Regular Regular" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="resetButton" buttonType="RAISED" onAction="#ResetHandle" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: #21759b;" text="RESET" textFill="#d3c5c5">
+                           <font>
+                              <Font name="Junction Regular Regular" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <GridPane hgap="10.0" layoutX="1.0" layoutY="88.0" prefHeight="269.0" prefWidth="200.0" vgap="5.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="48.0" valignment="CENTER" />
+                        <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="48.0" valignment="CENTER" />
+                        <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="48.0" valignment="CENTER" />
+                        <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="48.0" valignment="CENTER" />
+                        <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="48.0" valignment="CENTER" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="190.0" text="APP" textFill="#fce9e9" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Times New Roman Special G1" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="192.0" text="DEMOUCRON" textFill="#f5e2e2">
+                           <font>
+                              <Font name="Times New Roman Special G1" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="203.0" text="FOR SEARCHING" textFill="#a18195" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Times New Roman Special G1" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="36.0" prefWidth="223.0" text="OPTIMAL PATH" textFill="#a18195" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Times New Roman Special G1" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="36.0" prefWidth="223.0" text="MAXIMAL PATH" textFill="#a18195" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Times New Roman Special G1" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </GridPane>
+                  <VBox layoutX="20.0" layoutY="395.0" prefHeight="102.0" prefWidth="162.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="18.0">
+                     <children>
+                        <JFXToggleButton fx:id="addNodeButton" onAction="#AddNodeHandle" prefHeight="19.0" prefWidth="162.0" text="Add Node" textFill="#d3c5c5">
+                           <font>
+                              <Font name="Junction Regular Regular" size="13.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="algoToggleGroup" />
+                           </toggleGroup>
+                        </JFXToggleButton>
+                        <JFXToggleButton fx:id="addEdgeButton" onAction="#AddEdgeHandle" prefHeight="58.0" prefWidth="164.0" text="Add Edge" textFill="#d3c5c5" toggleGroup="$algoToggleGroup">
+                           <font>
+                              <Font name="Junction Regular Regular" size="13.0" />
+                           </font>
+                        </JFXToggleButton>
+                     </children>
+                     <padding>
+                        <Insets right="27.0" />
+                     </padding>
+                  </VBox>
+                  <JFXButton fx:id="imediatelyButtonRac" layoutX="27.0" layoutY="423.0" onAction="#checkIfPathIsOK" prefHeight="51.0" prefWidth="149.0" style="-fx-background-color: #21759b;" text="IMMEDIATELY" textFill="#f3f5f0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="377.0" prefHeight="26.0" prefWidth="149.0" text="Run" textFill="#d3c9c9">
+                     <font>
+                        <Font name="Times New Roman Special G1" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
